@@ -65,13 +65,13 @@ public class Lista<T> {
     public T obtem(int posicao){
         return this.busca(posicao);
     }
-
     public T busca(int posicao){
-        if (!(posicao >= 0 && posicao < tamanho)){
+        if (!(posicao >= 0 && posicao <tamanho)){
             throw new IllegalArgumentException("Posição inválida");
         }
         return this.elementos[posicao];
     }
+
 
     public int busca(T elemento){
         for (int i=0; i<this.tamanho; i++){
@@ -82,25 +82,18 @@ public class Lista<T> {
         return -1;
     }
 
-    public int ultimoIndice(T elemento){
+   public int ultimoIndice(T elemento){
 
-        for (int i=this.tamanho-1; i>=0; i--){
+        for (int i = 0;i<this.tamanho;i++){
             if (this.elementos[i].equals(elemento)){
                 return i;
             }
+
         }
         return -1;
-    }
+   }
 
     public boolean contem(T elemento){
-
-		/*int pos = busca(elemento);
-		if (pos > -1){
-			return true;
-		}
-
-		return false;*/
-
         return busca(elemento) > -1; //>=0
     }
 
@@ -121,7 +114,7 @@ public class Lista<T> {
 
     public void remove(T elemento){
         int pos = this.busca(elemento);
-        if (pos > -1){
+        if (pos >-1){
             this.remove(pos);
         }
     }

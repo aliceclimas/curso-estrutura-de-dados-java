@@ -39,7 +39,7 @@ public class Aula12 {
 
         System.out.println(arrayList.size()); // retorna o tamanho do array
 
-        
+
 
 
 
