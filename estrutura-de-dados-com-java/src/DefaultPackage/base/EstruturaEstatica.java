@@ -2,8 +2,8 @@ package src.DefaultPackage.base;
 
 public class EstruturaEstatica<T> {
 
-    protected T[] elementos;
-    protected int tamanho;
+    public T[] elementos;
+    public int tamanho;
 
     public EstruturaEstatica(int capacidade){
         this.elementos = (T[]) new Object[capacidade]; //solução do livro effective Java
