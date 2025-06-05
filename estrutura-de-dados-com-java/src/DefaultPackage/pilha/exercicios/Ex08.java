@@ -31,6 +31,8 @@ public class Ex08 {
             torreDeHanoi(n-1, aux, dest, original);
 
         }
-    }
+        // elevado a n - 1 + 1
 
+    }
+//09:34
 }
