@@ -11,9 +11,13 @@ public class ListaEncadeadaTeste {
         lista.adiciona(1);
 
         System.out.println("Tamanho = "+lista.getTamanho());
-
         System.out.println(lista);
 
+        lista.adiciona(2);
+        System.out.println(lista);
+
+        lista.adiciona(3);
+        System.out.println(lista);
 
     }
 }
