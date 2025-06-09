@@ -2,6 +2,7 @@ package src.DefaultPackage.lista.teste;
 
 import src.DefaultPackage.lista.ListaEncadeada;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListaEncadeadaTeste {
@@ -12,8 +13,27 @@ public class ListaEncadeadaTeste {
         //adicionaPosicao();
         //removeInicio();
         //removeFinal();
-        removePosicao();
+        //removePosicao();
+        testeLinkedList();
 
+    }
+    public static void testeLinkedList(){
+        LinkedList<Integer> lista = new LinkedList<>();
+
+        lista.add(1);
+        lista.addFirst(0);
+        lista.addLast(3);
+
+        System.out.println(lista.contains(0));
+
+        lista.add(2,2);
+        System.out.println(lista);
+
+        lista.remove(0);
+        lista.removeFirst();
+        lista.removeLast();
+
+        System.out.println(lista);
     }
     public static void removePosicao(){
         ListaEncadeada<Integer> lista = new ListaEncadeada<>();
