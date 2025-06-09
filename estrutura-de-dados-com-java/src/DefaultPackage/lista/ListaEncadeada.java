@@ -6,6 +6,8 @@ public class ListaEncadeada<T> {
     private No<T> ultimo;
     private int tamanho = 0;
 
+    private  final int NAO_ENCONTRADO = -1;
+
     public void adiciona(T elemento){
 
         No<T> celula = new No<T> (elemento);
@@ -35,7 +37,42 @@ public class ListaEncadeada<T> {
         this.ultimo = null;
         this.tamanho = 0;
     }
+    private No<T> buscaNo (int posicao){
+        if (!(posicao >= 0 && posicao <= this.tamanho)){
+            throw new IllegalArgumentException("Posição não existe");
 
+        }
+        No<T> noAtual = this.inicio;
+        for (int i = 0;i < posicao;i++){
+            noAtual = noAtual.getProximo();
+        }
+        return noAtual;
+    }
+
+
+    public T buscaPorPosicao(int posicao){
+
+        return this.buscaNo(posicao).getElemento();
+
+    }
+    public int busca(T elemento){
+
+        No<T> noAtual = this.inicio;
+        int pos = 0;
+
+        while(noAtual != null){
+
+            if (noAtual.getElemento().equals(elemento)){
+                return pos;
+
+            }
+            pos++;
+            noAtual = noAtual.getProximo();
+
+        }
+
+        return NAO_ENCONTRADO;
+    }
     @Override
     public String toString() {
 
