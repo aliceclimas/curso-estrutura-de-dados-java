@@ -7,7 +7,18 @@ public class ListaEncadeadaTeste {
     public static void main(String[] args){
         //testesIniciais();
         //adicionaInicio();
-        adicionaPosicao();
+        //adicionaPosicao();
+        removeInicio();
+    }
+    public static  void removeInicio(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        //lista.removeInicio();
+        lista.adiciona(1);
+        lista.adiciona(2);
+        lista.adiciona(3);
+
+        System.out.println(lista.removeInicio());
+        System.out.println(lista);
     }
     public static void adicionaPosicao(){
         ListaEncadeada<Integer> lista = new ListaEncadeada<>();
