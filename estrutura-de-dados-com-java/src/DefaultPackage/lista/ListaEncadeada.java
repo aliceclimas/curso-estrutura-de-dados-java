@@ -1,5 +1,7 @@
 package src.DefaultPackage.lista;
 
+import java.lang.annotation.ElementType;
+
 public class ListaEncadeada<T> {
 
     private No<T> inicio;
@@ -19,7 +21,35 @@ public class ListaEncadeada<T> {
         this.ultimo = celula;
         this.tamanho++;
 
+    }
+    public void adicionaInicio(T elemento){
+        if (this.tamanho == 0){
+            No<T> novoNo = new No<>(elemento);
+            this.inicio = novoNo;
+            this.ultimo = novoNo;
+        } else {
+            No<T> novoNo = new No<>(elemento,this.inicio);
+            this.inicio = novoNo;
+        }
+        this.tamanho++;
+    }
+    public void adiciona(int posicao, T elemento){
+        if (posicao < 0 || posicao > this.tamanho) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+        if (posicao == 0){// lista está vazia
+            this.adicionaInicio(elemento);
+        } else if (posicao == this.tamanho){ // adiciona elemento
+            this.adiciona(elemento);
+        } else { // meio
+            No<T> noAnterior = this.buscaNo(posicao);
+            No<T> proximoNo = noAnterior.getProximo();
+            No<T> novoNo = new No<>(elemento,proximoNo);
+            noAnterior.setProximo(novoNo);
+            this.tamanho++;
 
+
+        }
     }
     public int getTamanho(){
         return this.tamanho;
