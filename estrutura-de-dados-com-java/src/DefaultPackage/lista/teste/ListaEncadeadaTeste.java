@@ -2,6 +2,8 @@ package src.DefaultPackage.lista.teste;
 
 import src.DefaultPackage.lista.ListaEncadeada;
 
+import java.util.List;
+
 public class ListaEncadeadaTeste {
 
     public static void main(String[] args){
@@ -9,8 +11,22 @@ public class ListaEncadeadaTeste {
         //adicionaInicio();
         //adicionaPosicao();
         //removeInicio();
-        removeFinal();
+        //removeFinal();
+        removePosicao();
+
     }
+    public static void removePosicao(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        lista.adiciona(1);
+        lista.adiciona(2);
+        lista.adiciona(3);
+        lista.adiciona(4);
+        lista.adiciona(10);
+
+        System.out.println("Elemento removido: "+lista.remove(8));
+        System.out.println("Lista: "+lista);
+    }
+
     public static void removeFinal(){
         ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
